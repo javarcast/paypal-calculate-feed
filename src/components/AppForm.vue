@@ -61,7 +61,7 @@ export default {
         calculateFeeds(){
             let rate = this.standard?(Number(this.rate)/100):(Number(this.rate)/100)+0.03;
             this.fees = ( Number(this.amount) * rate) + Number(this.commission)
-            this.amountFeed = this.standard?(Number(this.amount) - Number(this.fees)):(Number(this.amount) + Number(this.fees))  
+            this.amountFeed = this.getStandard?(Number(this.amount) - Number(this.fees)):(Number(this.amount) + Number(this.fees))  
         }
     },
     computed:{
