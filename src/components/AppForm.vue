@@ -1,5 +1,5 @@
 <template>
-    <div class="appForm">
+    <div class="appForm w-5/6 sm:w-1/2">
         <h2>Calculator {{info.title}}</h2>
         <p>{{info.description}}</p>
         <div class="inputForm">
@@ -85,7 +85,6 @@ export default {
 <style scoped>
     .appForm{
         border: 1px solid #c9c9c9;
-        width:50%;
         padding: 20px 50px 50px 50px;
         border-radius: 50px;
     }
