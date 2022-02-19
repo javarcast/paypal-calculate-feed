@@ -1,32 +1,32 @@
 <template>
     <div class="appForm w-5/6 sm:w-1/2">
-        <h2>Calculator {{info.title}}</h2>
-        <p>{{info.description}}</p>
-        <div class="inputForm">
+        <h2 class="text-2xl">Calculator {{info.title}}</h2>
+        <p class="text-xs">{{info.description}}</p>
+        <div class="inputForm flex flex-col items-start md:px-40 py-4">
             <label  for="amount">{{info.amountText}}:</label>
             <input type="number" id="amount" v-model="amount">
         </div>
         <div class="feeds">
-            <div>
+            <div class="flex flex-col items-start md:px-40 pb-4">
                 <label  for="rate">Rate:</label>
                 <input type="number" id="rate" v-model="rate" :blur="changeRate">
             </div>
-            <div>
+            <div class="flex flex-col items-start md:px-40 pb-4">
                 <label  for="commission">Commission:</label>
                 <input type="number" id="commission" v-model="commission" :blur="changeCommission">
             </div>
         </div>
-        <div class="buttonWrapper">
+        <div class="buttonWrapper mb-4">
             <button @click="calculateFeeds" >Calcular Paypal Fees</button>
         </div>
 
         <div class="infoFeed">
-            <h2>Amount Feeds</h2>
-            <div class="inputForm">
+            <h2 class="text-xl mb-4">Amount Feeds</h2>
+            <div class="inputForm flex flex-col items-start md:px-40 mb-4">
                 <label  for="infoamount">{{info.amountGetText}}:</label>
                 <input disabled type="number" id="infoamount" :value="amountFeed">
             </div>
-            <div class="inputForm">
+            <div class="inputForm flex flex-col items-start md:px-40">
                 <label  for="fees">Paypal fees will be:</label>
                 <input disabled type="number" id="fees" :value="fees.toFixed(2)">
             </div>
@@ -93,9 +93,6 @@ export default {
         padding: 5px;
         border: 1px solid #c9c9c9;
     }
-    .appForm .inputForm{
-        margin: 20px 0;
-    }
     .appForm p{
         color:#696969;
     }
@@ -103,9 +100,6 @@ export default {
         margin-right: 10px;
     }
 
-    .appForm .buttonWrapper{
-        margin: 15px 0;
-    }
     .appForm .buttonWrapper button{
         padding: 15px;
         font-size: 18px;
@@ -119,11 +113,5 @@ export default {
         background: #3b7bbf;
         color: #fff;
         cursor: pointer;
-    }
-    .feeds{
-        display: flex;
-        justify-content: space-around;
-        margin: 20px 0;
-        flex-wrap: wrap;
     }
 </style>
